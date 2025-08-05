@@ -4,11 +4,17 @@ import { FaRegUser } from "react-icons/fa";
 import { MdShoppingCart } from "react-icons/md";
 import { RiMenuFoldFill, RiMenuFold2Fill } from "react-icons/ri";
 import Logo from '../assets/images/logo.png';
+import CartDrawer from "./CartDrawer";
 
 
 const Navbar = () => {
 
     const [isOpen, setIsOpen] = useState(true);
+    const [drawerOpen, setDrawerOpen] = useState(false);
+
+    const toggleDrawer = () => {
+        setDrawerOpen(!drawerOpen);
+    }
 
     const toggleMenu = () => {
         setIsOpen(!isOpen);
@@ -28,7 +34,7 @@ const Navbar = () => {
             </div>
             <div className='flex justify-between items-center'>
                 <FaRegUser className='text-2xl me-4' />
-                <MdShoppingCart className='text-3xl me-4 lg:me-0 bg-white text-primary rounded-4xl p-1' />
+                <MdShoppingCart onClick={toggleDrawer} className='text-3xl me-4 lg:me-0 bg-white text-primary rounded-4xl p-1' />
                 {
                     isOpen ? (
                         <RiMenuFold2Fill onClick={toggleMenu} className='text-2xl lg:hidden' />
@@ -47,6 +53,8 @@ const Navbar = () => {
                 <NavLink className={({ isActive }) => `px-2 md:px-4 py-0.5 rounded-xl transition duration-300 ${isActive ? 'text-white bg-primary' : 'text-primary hover:bg-primary hover:text-white'}`} to="/contact">Contact</NavLink>
             </div>      
         )}
+
+        <CartDrawer drawerOpen={drawerOpen} toggleDrawer={toggleDrawer} />
 
         <Outlet />
     </div>
