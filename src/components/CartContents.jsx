@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { RiDeleteBin5Fill } from "react-icons/ri";
-import PepsiZeroSugar from '../assets/images/pepsi-zero-sugar.png';
+import Frooty from '../assets/images/frooty.png';
 
 const CartContents = () => {
 
@@ -13,7 +13,7 @@ const CartContents = () => {
             color: "Red",
             price: 29.99,
             quantity: 2,
-            Image: PepsiZeroSugar,
+            Image: Frooty,
         }
     ]);
 
