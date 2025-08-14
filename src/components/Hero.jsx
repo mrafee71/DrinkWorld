@@ -51,7 +51,7 @@ const Hero = () => {
                 <h3 className='text-2xl font-bold uppercase mb-2'>{selectedDrink.name}</h3>
                 <p className='text-md uppercase text-gray-400 mb-8'>{selectedDrink.ingredients}</p>
                 <div className="text-lg text-yellow-400 font-medium flex items-center mb-8">BEST RATING <span className='ms-8 text-4xl text-white'>{selectedDrink.price}</span></div>
-                <button className="bg-gray-300 text-alternate font-bold text-xl px-8 py-2 rounded-lg">ADD TO CART</button>
+                <button className="bg-gray-300 text-alternate font-bold text-xl px-8 py-2 rounded-lg cursor-pointer hover:bg-alternate hover:text-gray-300 transition-all duration-300">ADD TO CART</button>
             </div>
 			<div className='flex justify-between w-[75%] bg-secondary py-2 px-8 rounded-3xl rounded-l-none'>
 				{drinks.map((drink, index) => (
@@ -69,19 +69,14 @@ const Hero = () => {
         </div>
         <div className="hidden w-full lg:w-1/2 relative lg:block">
             <AnimatePresence mode="wait">
-				<motion.div
-					key={selectedDrink.id}
-					initial={{ x: 600 }}
-					animate={{ x: 0 }}
-					exit={{ x: 600 }}
-					transition={{ duration: 0.4, ease: "easeInOut" }}
-					className="absolute right-0 bg-secondary w-80 xl:w-110 z-10 h-[100%] rounded-4xl rounded-r-none transform"
+				<div
+					className="absolute overflow-x-hidden right-0 bg-secondary w-80 xl:w-110 z-10 h-[100%] rounded-4xl rounded-r-none transform"
 				>
 					<div className="w-full h-full flex items-center relative left-15 xl:left-5 justify-center rotate-270">
                         <h2 className="text-6xl xl:text-7xl font-extrabold uppercase opacity-10 text-white">{selectedDrink.name}</h2>
                     </div>
 
-				</motion.div>
+				</div>
 			</AnimatePresence>
             <div className="w-full h-full relative z-20 overflow-hidden">
                 <AnimatePresence mode="wait">
