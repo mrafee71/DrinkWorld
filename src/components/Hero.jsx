@@ -73,8 +73,8 @@ const Hero = () => {
 					className="absolute overflow-x-hidden right-0 bg-secondary w-80 xl:w-110 z-10 h-[100%] rounded-4xl rounded-r-none transform"
 				>
 					<div className="w-full h-full flex items-center relative left-15 xl:left-5 justify-center rotate-270">
-                        <h2 className="text-6xl xl:text-7xl font-extrabold uppercase opacity-10 text-white">{selectedDrink.name}</h2>
-                    </div>
+              <h2 className="text-6xl xl:text-7xl font-extrabold uppercase opacity-10 text-white">{selectedDrink.name}</h2>
+          </div>
 
 				</div>
 			</AnimatePresence>

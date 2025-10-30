@@ -9,7 +9,7 @@ import CartDrawer from "./CartDrawer";
 
 const Navbar = () => {
 
-    const [isOpen, setIsOpen] = useState(true);
+    const [isOpen, setIsOpen] = useState(false);
     const [drawerOpen, setDrawerOpen] = useState(false);
 
     const toggleDrawer = () => {
