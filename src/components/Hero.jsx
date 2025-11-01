@@ -51,7 +51,7 @@ const Hero = () => {
                 <h3 className='text-2xl font-bold uppercase mb-2'>{selectedDrink.name}</h3>
                 <p className='text-md uppercase text-gray-400 mb-8'>{selectedDrink.ingredients}</p>
                 <div className="text-lg text-yellow-400 font-medium flex items-center mb-8">BEST RATING <span className='ms-8 text-4xl text-white'>{selectedDrink.price}</span></div>
-                <button className="bg-gray-300 text-alternate font-bold text-xl px-8 py-2 rounded-lg cursor-pointer hover:bg-alternate hover:text-gray-300 transition-all duration-300">ADD TO CART</button>
+                <button className="bg-white text-secondary font-bold text-xl px-8 py-2 rounded-lg cursor-pointer hover:bg-secondary hover:text-white transition-all duration-300">ADD TO CART</button>
             </div>
 			<div className='flex justify-between w-[75%] bg-secondary py-2 px-8 rounded-3xl rounded-l-none'>
 				{drinks.map((drink, index) => (
