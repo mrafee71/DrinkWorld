@@ -1,5 +1,8 @@
 import { useState } from 'react'
 import Frooty from '../assets/images/frooty.png'
+import FantaPineapple from '../assets/images/fanta-pineapple.png'
+import CocoCola from '../assets/images/coco-cola.png'
+
 
 const Categories = () => {
 
@@ -12,21 +15,24 @@ const Categories = () => {
         name: "Frooty",
         category: "Drinks",
         image: Frooty,
-        desc: "Frooty is a drink that is made from fruits. It is a great way to start your day.",
+        flavor: "Mango",
+        ingredients: "Water, mango pulp, sugar, citric acid, antioxidant (ascorbic acid), salt, permitted class II preservatives (E211, E224)",
         price: 20,
       },
       {
-        name: "Fruit Punch",
+        name: "Fanta",
         category: "Drinks",
-        image: Frooty,
-        desc: "Fruit Punch is a drink that is made from fruits. It is a great way to start your day.",
+        image: FantaPineapple,
+        flavor: "Pineapple",
+        ingredients: "Carbonated water, high fructose corn syrup, citric acid, natural flavors, sodium benzoate (to protect taste), modified food starch, yellow 5, glycerol ester of rosin",
         price: 20,
       },
       {
         name: "Pepsi",
         category: "Drinks",
-        image: Frooty,
-        desc: "Pepsi is a drink that is made from fruits. It is a great way to start your day.",
+        image: CocoCola,
+        flavor: "Cola",
+        ingredients: "Carbonated water, high fructose corn syrup, caramel color, phosphoric acid, natural flavors, caffeine",
         price: 20,
       }
     ]
@@ -64,13 +70,15 @@ const Categories = () => {
                 <img
                   src={item.image}
                   alt={item.name}
-                  className="relative top-12 left-[25%] w-24 h-24 md:w-32 md:h-32 lg:w-48 lg:h-48 rounded-full"
+                  className="relative top-12 left-[25%] w-32 h-32 lg:w-48 lg:h-48 rounded-full hover:rotate-12 transition-all duration-200"
                 />
-                <div className='border-2 border-secondary text-white p-4 md:p-6 lg:p-8 rounded-xl rounded-br-4xl'>
-                  <h3 className="text-lg md:text-xl lg:text-2xl font-bold mt-2">{item.name}</h3>
-                  <p className="text-sm md:text-base lg:text-lg mt-2">{item.desc}</p>
-                  <p className="text-md md:text-lg lg:text-xl font-bold mt-4">${item.price}</p>
+                <div className='bg-[url("./assets/images/abstract-bg.png")] border-2 border-secondary text-white p-4 md:p-6 lg:p-8 rounded-xl rounded-br-4xl h-full'>
+                  <h3 className="text-special text-lg md:text-xl lg:text-2xl font-bold mt-2">{item.name}</h3>
+                  <p className="text-sm md:text-base lg:text-md mt-2"><b>Flavor:</b> {item.flavor}</p>
+                  <p className="text-sm mt-2"><b>Ingredients:</b> {item.ingredients}</p>
+                  <p className="text-special text-md md:text-lg lg:text-xl font-bold mt-4 mb-4">${item.price}</p>
                 </div>
+                <button className='relative bottom-6 lg:bottom-8 bg-white text-secondary border-2 border-transparent hover:bg-primary hover:text-white hover:border-white font-bold py-3 lg:py-4 px-6 md:px-8 xl:px-12 rounded-4xl cursor-pointer'>Add To Cart</button>
               </div>
             )
         ))}
