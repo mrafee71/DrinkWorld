@@ -2,6 +2,7 @@ import { useState } from 'react'
 import Frooty from '../assets/images/frooty.png'
 import FantaPineapple from '../assets/images/fanta-pineapple.png'
 import CocoCola from '../assets/images/coco-cola.png'
+import StarRating from '../utils/StarRating'
 
 
 const Categories = () => {
@@ -16,7 +17,7 @@ const Categories = () => {
         category: "Drinks",
         image: Frooty,
         flavor: "Mango",
-        ingredients: "Water, mango pulp, sugar, citric acid, antioxidant (ascorbic acid), salt, permitted class II preservatives (E211, E224)",
+        ratings: 3,
         price: 20,
       },
       {
@@ -24,15 +25,15 @@ const Categories = () => {
         category: "Drinks",
         image: FantaPineapple,
         flavor: "Pineapple",
-        ingredients: "Carbonated water, high fructose corn syrup, citric acid, natural flavors, sodium benzoate (to protect taste), modified food starch, yellow 5, glycerol ester of rosin",
+        ratings: 4.5,
         price: 20,
       },
       {
-        name: "Pepsi",
+        name: "Coca-Cola",
         category: "Drinks",
         image: CocoCola,
         flavor: "Cola",
-        ingredients: "Carbonated water, high fructose corn syrup, caramel color, phosphoric acid, natural flavors, caffeine",
+        ratings: 4.5,
         price: 20,
       }
     ]
@@ -72,13 +73,16 @@ const Categories = () => {
                   alt={item.name}
                   className="relative top-12 left-[25%] w-32 h-32 lg:w-48 lg:h-48 rounded-full hover:rotate-12 transition-all duration-200"
                 />
-                <div className='bg-[url("./assets/images/abstract-bg.png")] border-2 border-secondary text-white p-4 md:p-6 lg:p-8 rounded-xl rounded-br-4xl h-full'>
+                <div className='w-full bg-[url("./assets/images/product-bg.png")] border-2 border-secondary text-primary p-4 md:p-6 lg:p-8 rounded-xl rounded-br-4xl h-full'>
                   <h3 className="text-special text-lg md:text-xl lg:text-2xl font-bold mt-2">{item.name}</h3>
                   <p className="text-sm md:text-base lg:text-md mt-2"><b>Flavor:</b> {item.flavor}</p>
-                  <p className="text-sm mt-2"><b>Ingredients:</b> {item.ingredients}</p>
-                  <p className="text-special text-md md:text-lg lg:text-xl font-bold mt-4 mb-4">${item.price}</p>
+                  <p className="flex text-sm mt-2">
+                    <StarRating rating={item.ratings} />
+                    <span className="text-xs font-bold ml-2">{item.ratings} / 5</span>
+                  </p>
+                  <p className="text-special text-md md:text-lg lg:text-xl font-bold mt-2 mb-4">Price: ${item.price}</p>
                 </div>
-                <button className='relative bottom-6 lg:bottom-8 bg-white text-secondary border-2 border-transparent hover:bg-primary hover:text-white hover:border-white font-bold py-3 lg:py-4 px-6 md:px-8 xl:px-12 rounded-4xl cursor-pointer'>Add To Cart</button>
+                <button className='relative bottom-6 lg:bottom-8 bg-white text-secondary border-2 border-transparent hover:bg-primary hover:text-white hover:border-white font-bold py-3 lg:py-3 px-6 md:px-8 xl:px-6 rounded-4xl cursor-pointer'>Add To Cart</button>
               </div>
             )
         ))}
